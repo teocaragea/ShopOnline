@@ -20,9 +20,18 @@ public class Order {
     @Column(name = "price")
     private double price;
 
-    @OneToMany
-    @JoinColumn(name = "product_id")
+    @ManyToMany
+    @JoinTable(name = "comanda_product", joinColumns = @JoinColumn(name = "comanda_id"),
+            inverseJoinColumns = @JoinColumn(name="product_id"))
     Set<Product> products = new HashSet<>();
+
+    public int getComandaId() {
+        return comandaId;
+    }
+
+    public void setComandaId(int comandaId) {
+        this.comandaId = comandaId;
+    }
 
     public Order(){
 
@@ -31,6 +40,10 @@ public class Order {
     public Order(double price, Set<Product> products) {
         this.price = price;
         this.products = products;
+    }
+
+    public Order(double price) {
+        this.price = price;
     }
 
     public double getPrice() {

@@ -16,8 +16,9 @@ public class Delivery {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int deliveryId;
 
-    @OneToMany
-    @JoinColumn(name = "comanda_id")
+    @ManyToMany
+    @JoinTable(name="delivery_order", joinColumns = @JoinColumn(name="delivery_id"),
+            inverseJoinColumns = @JoinColumn(name = "comanda_id"))
     public Set<Order> orders = new HashSet<>();
 
     @Column(name = "repayment")//ramburs

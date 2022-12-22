@@ -69,10 +69,6 @@ public class ShopOnlineApplication implements CommandLineRunner {
         productRepository.save(product4);
         productRepository.save(product5);
 
-        Order order1 = new Order(product1.getPrice(), Set.of(product1));
-        orderRepository.save(order1);
-
- /*
         Order order1 = new Order(product1.getPrice() + product2.getPrice(), Set.of(product1,product2));
         Order order2 = new Order(product1.getPrice() + product2.getPrice() + product5.getPrice(), Set.of(product1,product2,product5));
         Order order3 = new Order(product1.getPrice() + product4.getPrice() + product5.getPrice(), Set.of(product1,product4,product5));
@@ -81,7 +77,7 @@ public class ShopOnlineApplication implements CommandLineRunner {
         orderRepository.save(order2);
         orderRepository.save(order3);
 
-        List<Order> orders = new ArrayList<>();
+        Set<Order> orders = new HashSet<>();
         orders.add(order1);
         orders.add(order2);
         Delivery delivery1 = new Delivery(orders,false,user1);
@@ -98,7 +94,7 @@ public class ShopOnlineApplication implements CommandLineRunner {
         History history2 = new History(delivery2, History.Status.Livrat,d2);
 
         historyRepository.save(history1);
-        historyRepository.save(history2);*/
+        historyRepository.save(history2);
 
     }
 }

@@ -28,6 +28,17 @@ public class Product {
     @OneToOne
     @JoinColumn(name = "stone_id")
     private NaturalStone naturalStone;
+
+
+    public int getProductId() {
+        return productId;
+    }
+
+    public void setProductId(int productId) {
+        this.productId = productId;
+    }
+
+
     public Product(){
 
     }
