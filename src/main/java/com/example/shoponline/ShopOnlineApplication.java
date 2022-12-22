@@ -7,9 +7,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @SpringBootApplication
 public class ShopOnlineApplication implements CommandLineRunner {
@@ -64,23 +62,20 @@ public class ShopOnlineApplication implements CommandLineRunner {
         product3.setNaturalStone(naturalStone2);
         product4.setNaturalStone(naturalStone3);
         product5.setNaturalStone(naturalStone3);
-/*
+
         productRepository.save(product1);
         productRepository.save(product2);
         productRepository.save(product3);
         productRepository.save(product4);
         productRepository.save(product5);
 
+        Order order1 = new Order(product1.getPrice(), Set.of(product1));
+        orderRepository.save(order1);
 
-        List<Product> productList = new ArrayList<>();
-        productList.add(product1);
-        productList.add(product2);
-        Order order1 = new Order(product1.getPrice() + product2.getPrice(), productList);
-        productList.add(product5);
-        Order order2 = new Order(product1.getPrice() + product2.getPrice() + product5.getPrice(), productList);
-        productList.remove(product2);
-        productList.add(product4);
-        Order order3 = new Order(product1.getPrice() + product4.getPrice() + product5.getPrice(), productList);
+ /*
+        Order order1 = new Order(product1.getPrice() + product2.getPrice(), Set.of(product1,product2));
+        Order order2 = new Order(product1.getPrice() + product2.getPrice() + product5.getPrice(), Set.of(product1,product2,product5));
+        Order order3 = new Order(product1.getPrice() + product4.getPrice() + product5.getPrice(), Set.of(product1,product4,product5));
 
         orderRepository.save(order1);
         orderRepository.save(order2);

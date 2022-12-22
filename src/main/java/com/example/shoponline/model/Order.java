@@ -4,7 +4,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "comanda")
@@ -20,13 +22,13 @@ public class Order {
 
     @OneToMany
     @JoinColumn(name = "product_id")
-    List<Product> products = new ArrayList<>();
+    Set<Product> products = new HashSet<>();
 
     public Order(){
 
     }
 
-    public Order(double price, List<Product> products) {
+    public Order(double price, Set<Product> products) {
         this.price = price;
         this.products = products;
     }
@@ -47,11 +49,11 @@ public class Order {
         this.price = price;
     }
 
-    public List<Product> getProducts() {
+    public Set<Product> getProducts() {
         return products;
     }
 
-    public void setProducts(List<Product> products) {
+    public void setProducts(Set<Product> products) {
         this.products = products;
     }
 }

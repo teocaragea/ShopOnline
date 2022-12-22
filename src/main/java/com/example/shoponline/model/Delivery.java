@@ -4,7 +4,9 @@ import org.hibernate.mapping.Join;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "delivery")
@@ -16,7 +18,7 @@ public class Delivery {
 
     @OneToMany
     @JoinColumn(name = "comanda_id")
-    public List<Order> orders = new ArrayList<>();
+    public Set<Order> orders = new HashSet<>();
 
     @Column(name = "repayment")//ramburs
     public Boolean repayment;
@@ -28,11 +30,11 @@ public class Delivery {
     public Delivery() {
     }
 
-    public List<Order> getOrders() {
+    public Set<Order> getOrders() {
         return orders;
     }
 
-    public void setOrders(List<Order> orders) {
+    public void setOrders(Set<Order> orders) {
         this.orders = orders;
     }
 
@@ -52,7 +54,7 @@ public class Delivery {
         this.user = user;
     }
 
-    public Delivery(List<Order> orders, Boolean repayment, User user) {
+    public Delivery(Set<Order> orders, Boolean repayment, User user) {
         this.orders = orders;
         this.repayment = repayment;
         this.user = user;
