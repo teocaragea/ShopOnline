@@ -27,7 +27,9 @@ public class NaturalStoneService {
     public NaturalStone updateName(String name, int id) {
         NaturalStone ns = new NaturalStone();
         ns = naturalStoneRepository.findById(id).get();
-        name = name.substring(12,name.length()-4);
+        if (name.contains(">=")){
+            name = name.substring(12,name.length()-4);
+        }
         ns.setName(name);
         return naturalStoneRepository.save(ns);
     }

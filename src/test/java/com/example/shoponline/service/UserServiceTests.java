@@ -26,7 +26,7 @@ public class UserServiceTests {
 
     @Test
     @DisplayName("Running test for saveNewUser method")
-    void saveNewArtistTest(){
+    void saveNewUserTest(){
         User user = new User("teocaragea", "pass1234");
         when(userRepository.save(user)).thenReturn(user);
 
