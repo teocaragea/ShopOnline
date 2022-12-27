@@ -60,4 +60,8 @@ public class Delivery {
         this.repayment = repayment;
         this.user = user;
     }
+    public Delivery(Boolean repayment, User user) {
+        this.repayment = repayment;
+        this.user = user;
+    }
 }

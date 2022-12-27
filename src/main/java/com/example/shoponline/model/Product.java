@@ -1,6 +1,8 @@
 package com.example.shoponline.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "product")
@@ -23,10 +25,12 @@ public class Product {
     @Enumerated(EnumType.STRING)
     private Type type ;
     @Column(name= "price")
+    @Min(0)
     private double price;
 
     @OneToOne
     @JoinColumn(name = "stone_id")
+    @NotNull
     private NaturalStone naturalStone;
 
 

@@ -39,6 +39,14 @@ public class History {
         this.data = data;
     }
 
+    public int getHistoryId() {
+        return historyId;
+    }
+
+    public void setHistoryId(int historyId) {
+        this.historyId = historyId;
+    }
+
     public Delivery getDelivery() {
         return delivery;
     }
@@ -58,6 +66,11 @@ public class History {
 
     public History(Delivery delivery, Status status, Date data) {
         this.delivery = delivery;
+        this.status = status;
+        this.data = data;
+    }
+
+    public History(Status status, Date data){
         this.status = status;
         this.data = data;
     }
