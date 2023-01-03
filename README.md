@@ -6,6 +6,7 @@ This project serves as a backend service for an online shop of bracelets and nec
 
 
 This is my Database Diagram
+
 ![Database Diagram](https://github.com/teocaragea/ShopOnline/blob/master/database.png)
 
 Entities:
