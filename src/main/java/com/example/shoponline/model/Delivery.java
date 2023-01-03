@@ -3,6 +3,7 @@ package com.example.shoponline.model;
 import org.hibernate.mapping.Join;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -22,6 +23,7 @@ public class Delivery {
     public Set<Order> orders = new HashSet<>();
 
     @Column(name = "repayment")//ramburs
+    @NotNull
     public Boolean repayment;
 
     @OneToOne

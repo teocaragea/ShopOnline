@@ -1,6 +1,7 @@
 package com.example.shoponline.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "user")
@@ -11,7 +12,9 @@ public class User {
     private int userId;
 
     @Column(name = "name")
+    @NotNull
     private String userName;
+    @NotNull
     private String password;
 
     public User(){
